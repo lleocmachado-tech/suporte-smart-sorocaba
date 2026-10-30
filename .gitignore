@@ -1,0 +1,13 @@
+# Material bruto da loja (fotos originais, vídeos, PDFs) — pesado demais pro repo.
+# O site usa só as versões otimizadas em site/assets/img.
+/Caixas de som/
+/Celulares/
+/Fones/
+/Relogio/
+/SMARTWATCH/
+/*.pdf
+/*.png
+
+desktop.ini
+Thumbs.db
+.DS_Store
