@@ -18,6 +18,7 @@ jobs:
         with:
           publish-dir: ./site
           production-deploy: true
+          fails-without-credentials: true
           deploy-message: ${{ github.event.head_commit.message || 'Deploy manual' }}
           enable-pull-request-comment: false
           enable-commit-comment: false
