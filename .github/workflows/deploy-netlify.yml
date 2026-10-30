@@ -1,0 +1,27 @@
+# Publica a pasta site/ no site do Netlify indicado pelos secrets.
+# O site pode estar em qualquer conta Netlify: basta o token e o ID dela.
+name: Deploy no Netlify
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: ./site
+          production-deploy: true
+          deploy-message: ${{ github.event.head_commit.message || 'Deploy manual' }}
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          enable-github-deployment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

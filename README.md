@@ -14,7 +14,12 @@ Abrir http://localhost:5173.
 
 ## Publicar
 
-Netlify: o `netlify.toml` já aponta a publicação para a pasta `site/`, sem comando de build. Basta importar o repositório no Netlify; cada push na `main` gera um deploy novo.
+Netlify, via GitHub Actions ([`.github/workflows/deploy-netlify.yml`](.github/workflows/deploy-netlify.yml)): cada push na `main` publica a pasta `site/`. Também dá para rodar na mão em Actions → Deploy no Netlify → Run workflow.
+
+O site pode estar em qualquer conta Netlify. Configure em Settings → Secrets and variables → Actions:
+
+- `NETLIFY_AUTH_TOKEN`: token pessoal da conta Netlify dona do site (User settings → Applications → Personal access tokens).
+- `NETLIFY_SITE_ID`: ID do site (Site configuration → Site details → Project ID).
 
 ## Produtos
 
