@@ -1,0 +1,3 @@
+# Site estático, sem build: o Netlify só publica a pasta site/.
+[build]
+  publish = "site"

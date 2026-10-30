@@ -14,7 +14,7 @@ Abrir http://localhost:5173.
 
 ## Publicar
 
-Qualquer hospedagem estática servindo a pasta `site/` (GitHub Pages, Netlify, Vercel).
+Netlify: o `netlify.toml` já aponta a publicação para a pasta `site/`, sem comando de build. Basta importar o repositório no Netlify; cada push na `main` gera um deploy novo.
 
 ## Produtos
 
